@@ -1,16 +1,19 @@
-"use client"
-import CustomLink from "@/components/custom-link"
-import { useEffect, useState } from "react"
+"use client";
+import CustomLink from "@/components/custom-link";
+import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 export default function Page() {
-  const [data, setData] = useState()
-  useEffect(() => {
-    ;(async () => {
-      const res = await fetch("/api/protected")
-      const json = await res.json()
-      setData(json)
-    })()
-  }, [])
+  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+  const { data, error, isLoading } = useSWR("/api/protected", fetcher);
+  // const [data, setData] = useState();
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await fetch("/api/protected");
+  //     const json = await res.json();
+  //     setData(json);
+  //   })();
+  // }, []);
   return (
     <div className="space-y-2">
       <h1 className="text-3xl font-bold">Route Handler Usage</h1>
@@ -30,5 +33,5 @@ export default function Page() {
         <code>{JSON.stringify(data, null, 2)}</code>
       </pre>
     </div>
-  )
+  );
 }
