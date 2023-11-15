@@ -3,9 +3,11 @@ import packageJSON from "../package.json";
 
 export default function Index() {
   return (
-    <div className="mt-12 space-y-2 hover:p-4 hover:text-red-700 lg:mt-2">
-      <h1 className="text-3xl font-bold">NextAuth.js Example</h1>
-      <p>
+    <div className="mt-12 space-y-2 ">
+      <h1 className="animate-bounce text-3xl font-bold hover:paused">
+        NextAuth.js Example
+      </h1>
+      <p className="delay-150 duration-300 animate-in slide-in-from-top-2">
         This is an example site to demonstrate how to use{" "}
         <CustomLink href="https://nextjs.authjs.dev">NextAuth.js</CustomLink>{" "}
         for authentication. Check out the{" "}
