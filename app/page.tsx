@@ -1,9 +1,9 @@
-import CustomLink from "@/components/custom-link"
-import packageJSON from "../package.json"
+import CustomLink from "@/components/custom-link";
+import packageJSON from "../package.json";
 
 export default function Index() {
   return (
-    <div className="space-y-2">
+    <div className="mt-12 space-y-2 hover:p-4 hover:text-red-700 lg:mt-2">
       <h1 className="text-3xl font-bold">NextAuth.js Example</h1>
       <p>
         This is an example site to demonstrate how to use{" "}
@@ -24,5 +24,5 @@ export default function Index() {
         version: <em>next-auth@{packageJSON.dependencies["next-auth"]}</em>
       </p>
     </div>
-  )
+  );
 }
